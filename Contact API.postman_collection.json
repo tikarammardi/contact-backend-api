@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "ad444bf5-2ebd-4293-bdd1-11b4d249d97d",
+		"name": "Contact API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mayagex224@wiicheat.com\",\r\n    \"password\": \"root\",\r\n    \"confirmPassword\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"selaroy524@ehstock.com\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Account Activation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"selaroy524@ehstock.com\",\r\n    \"code\": \"120797\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/activate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "Add Contact",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGFyb3k1MjRAZWhzdG9jay5jb20iLCJpZCI6IjYzNTUzNWQ5LWViMDctNDRlZS04ODEwLTAwYmIyYjQxZjM4NCIsImlhdCI6MTY0MTA0NTk5NSwiZXhwIjoxNjQxMDQ5NTk1fQ.JRQZX5lYZvs4G1iMdZ-qw14zEIK8mJq2_n8cizV_oe4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Tikaram Mardi\",\r\n    \"email\": \"mew@gmail.com\",\r\n    \"phone\": \"2345667565\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGFyb3k1MjRAZWhzdG9jay5jb20iLCJpZCI6IjYzNTUzNWQ5LWViMDctNDRlZS04ODEwLTAwYmIyYjQxZjM4NCIsImlhdCI6MTY0MTA1MDc0MiwiZXhwIjoxNjQxMDU0MzQyfQ.AguNBkgD9GSy7SLqW-p59abhDL1kHFJvAdIxRgF0bso",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Tikaram Mardi\",\r\n    \"email\": \"hellocat@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/contacts/contact/61d06aed930e1340441a8902",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"contacts",
+								"contact",
+								"61d06aed930e1340441a8902"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetContact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGFyb3k1MjRAZWhzdG9jay5jb20iLCJpZCI6IjYzNTUzNWQ5LWViMDctNDRlZS04ODEwLTAwYmIyYjQxZjM4NCIsImlhdCI6MTY0MTA1NDQ1MCwiZXhwIjoxNjQxMDU4MDUwfQ.r6fEoPjumwJiC9KGxmgVd8mnHtsz0Fb6iWIhXKHFYSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNlbGFyb3k1MjRAZWhzdG9jay5jb20iLCJpZCI6IjYzNTUzNWQ5LWViMDctNDRlZS04ODEwLTAwYmIyYjQxZjM4NCIsImlhdCI6MTY0MTA0NTk5NSwiZXhwIjoxNjQxMDQ5NTk1fQ.JRQZX5lYZvs4G1iMdZ-qw14zEIK8mJq2_n8cizV_oe4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/contacts/contact/61d06612ba87222e48cced06",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"contacts",
+								"contact",
+								"61d06612ba87222e48cced06"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
